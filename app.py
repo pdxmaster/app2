@@ -6,7 +6,6 @@ load_dotenv()  # Nimmt die Umgebungsvariablen aus der .env-Datei auf
 
 app = Flask(__name__)
 
-# Ersetzen Sie 'Ihr-API-Schlüssel' mit Ihrem tatsächlichen OpenAI API-Schlüssel
 api_key = os.environ.get('OPENAI_API_KEY')
 
 def send_chat_request(api_key, content):
@@ -19,7 +18,7 @@ def send_chat_request(api_key, content):
         data = {
             "model": "gpt-4",
             "messages": [
-            {"role": "system", "content": "Du bist ein Professor, der in fachsprache Antwortet. "},
+            {"role": "system", "content": "Du bist ein Professor, der in fachsprache Antwortet. Antworte zunächst auf Deutsch. Danach antworte auf Spanisch.  "},
             {"role": "user", "content": content}
         ]
     }
